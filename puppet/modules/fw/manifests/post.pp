@@ -41,10 +41,11 @@ class fw::post {
     before => undef,
   }
 
-  firewall { '910 deny all other output requests':
-    chain  => 'OUTPUT',
-    action => 'drop',
-    proto  => 'all',
-    before => undef,
-  }
+# TODO Remove to put in production
+##  firewall { '910 deny all other output requests':
+##    chain  => 'OUTPUT',
+##    action => 'drop',
+##    proto  => 'all',
+##    before => undef,
+##  }
 }
