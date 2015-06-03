@@ -6,16 +6,16 @@ forge "https://forgeapi.puppetlabs.com"
 #
 mod 'puppetlabs-ntp'
 mod 'puppetlabs-firewall'
-#mod 'puppetlabs-apache'
+#
+mod 'thias/sysctl'
+#
+mod 'dhoppe/fail2ban'
 #
 mod 'saz-timezone'
 #
 mod 'pdxcat-collectd',
-  :git => 'git://github.com/pdxcat/puppet-module-collectd.git'
+  :git => 'https://github.com/pdxcat/puppet-module-collectd.git'
 #
 mod 'golja-influxdb'
-#
-mod 'echocat-graphite',
-  :git => 'git://github.com/echocat/puppet-graphite.git'
 #
 mod 'bfraser/grafana'

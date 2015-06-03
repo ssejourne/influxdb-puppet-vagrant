@@ -33,13 +33,6 @@ Vagrant.configure(2) do |config|
     end
   end
 
-#  config.vm.synced_folder "puppet/files", "/etc/puppet/files"
-
-#  if Vagrant.has_plugin?("vagrant-librarian-puppet")
-#    config.librarian_puppet.puppetfile_dir = "puppet-contrib"
-#    config.librarian_puppet.resolve_options = { :force => true }
-#  end
-
   influxdb_servers = {
     :'influxdb1' => '192.168.65.11',
 #    :'influxdb2' => '192.168.65.12',
@@ -63,7 +56,6 @@ Vagrant.configure(2) do |config|
       puppet.module_path = [ "puppet/modules", "puppet-contrib/modules"]
       puppet.hiera_config_path = "puppet/hiera.yaml"
       puppet.options="--fileserverconfig=/vagrant/puppet/fileserver.conf --summarize --verbose"
-      #puppet.options="--verbose --debug --trace --summarize"
   end
 end
 

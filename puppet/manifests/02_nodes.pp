@@ -8,6 +8,11 @@ node /^influxdb\d*.vagrant.dev$/ {
   # influxdb
   include my_influxdb
 
+  firewall { '500 allow influxdb':
+    port   => [ 2003, 8083, 8086, 8090, 8099 ],
+    proto  => 'tcp',
+    action => 'accept',
+  }
   ### Collectd
   class { '::collectd':
     purge        => true,
@@ -28,5 +33,11 @@ node /^influxdb\d*.vagrant.dev$/ {
 
   # Grafana
   class { 'grafana': }
+
+  firewall { '510 allow grafana':
+    port   => 3000,
+    proto  => 'tcp',
+    action => 'accept'
+  }
 }
 
