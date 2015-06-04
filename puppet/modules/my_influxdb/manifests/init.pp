@@ -17,7 +17,8 @@ class my_influxdb {
         'database'    => 'collectd',
         'udp_enabled' => true,
       }
-    }
+    },
+    seed_servers  => ['influxdb1:8090','influxdb2:8090','influxdb3:8090'],
   }
 
   # Create collectd db and user with collectd as password
@@ -26,4 +27,6 @@ class my_influxdb {
     unless  => 'ruby -e "require \'influxdb\'; influxdb = InfluxDB::Client.new; puts influxdb.get_database_list" | grep collectd',
     require => Class['influxdb::server'],
   }
+
+  
 }

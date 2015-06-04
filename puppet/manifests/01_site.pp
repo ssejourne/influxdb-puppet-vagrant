@@ -19,7 +19,12 @@ File {
 class { 'timezone':
   timezone => 'Europe/Paris',
 } -> class { '::ntp':
-  restrict => ['127.0.0.1'],
+  restrict  => [
+    'default ignore',
+    '-6 default ignore',
+    '127.0.0.1',
+    '-6 ::1',
+  ],
 }
 
 # Sysctl stuff

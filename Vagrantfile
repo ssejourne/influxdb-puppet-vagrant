@@ -35,8 +35,8 @@ Vagrant.configure(2) do |config|
 
   influxdb_servers = {
     :'influxdb1' => '192.168.65.11',
-#    :'influxdb2' => '192.168.65.12',
-#    :'influxdb3' => '192.168.65.13'
+    :'influxdb2' => '192.168.65.12',
+    :'influxdb3' => '192.168.65.13'
   }
 
   influxdb_servers.each do |server_name, server_ip|
